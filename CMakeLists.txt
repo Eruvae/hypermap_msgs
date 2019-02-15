@@ -57,6 +57,7 @@ add_message_files(
   HypermapImage.msg
   SemanticObject.msg
   SemanticMap.msg
+  SemanticMapUpdate.msg
 )
 
 ## Generate services in the 'srv' folder
