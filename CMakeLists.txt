@@ -69,6 +69,8 @@ add_message_files(
 add_service_files(
   FILES
   RetrieveStrVals.srv
+  GetSemanticByArea.srv
+  GetSemanticByString.srv
 )
 
 ## Generate actions in the 'action' folder
