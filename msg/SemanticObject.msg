@@ -1,4 +1,4 @@
-uint32 id
+int32 id
 geometry_msgs/Polygon shape
 geometry_msgs/Point position # should be centroid of shape
 string name

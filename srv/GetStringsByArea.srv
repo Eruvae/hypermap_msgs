@@ -1,4 +1,5 @@
-geometry_msgs/Polygon area
+string layer
+geometry_msgs/PolygonStamped area
 ---
 string[] names
 geometry_msgs/Point[] locations

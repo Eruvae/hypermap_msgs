@@ -7,8 +7,7 @@ project(hypermap_msgs)
 ## Find catkin macros and libraries
 ## if COMPONENTS list like find_package(catkin REQUIRED COMPONENTS xyz)
 ## is used, also find other catkin packages
-find_package(catkin REQUIRED COMPONENTS
-   std_msgs nav_msgs sensor_msgs message_generation
+find_package(catkin REQUIRED COMPONENTS std_msgs geometry_msgs message_generation #nav_msgs sensor_msgs
 )
 
 ## System dependencies are found with CMake's conventions
@@ -54,7 +53,6 @@ add_message_files(
   FILES
   LayerMetaData.msg
   HypermapMetaData.msg
-  HypermapImage.msg
   SemanticObject.msg
   SemanticMap.msg
   SemanticMapUpdate.msg
@@ -68,9 +66,16 @@ add_message_files(
 # )
 add_service_files(
   FILES
-  RetrieveStrVals.srv
+  GetIntAtPoint.srv
+  GetIntsByArea.srv
+  GetLocationsByInt.srv
+  GetLocationsByString.srv
   GetSemanticByArea.srv
   GetSemanticByString.srv
+  GetStringAtPoint.srv
+  GetStringsByArea.srv
+  LoadMap.srv
+  StoreMap.srv
 )
 
 ## Generate actions in the 'action' folder
@@ -86,8 +91,7 @@ add_service_files(
 #   std_msgs  # Or other packages containing msgs
 # )
 generate_messages(
-  DEPENDENCIES
-  std_msgs nav_msgs sensor_msgs
+  DEPENDENCIES std_msgs geometry_msgs #nav_msgs sensor_msgs
 )
 
 ################################################
@@ -122,7 +126,7 @@ generate_messages(
 catkin_package(
 #  INCLUDE_DIRS include
 #  LIBRARIES hypermap_msgs
-   CATKIN_DEPENDS std_msgs nav_msgs sensor_msgs message_runtime
+   CATKIN_DEPENDS std_msgs geometry_msgs message_runtime #nav_msgs sensor_msgs
 #  DEPENDS system_lib
 )
 

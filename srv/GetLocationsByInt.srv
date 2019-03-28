@@ -1,0 +1,5 @@
+string layer
+int32 value
+geometry_msgs/PolygonStamped area
+---
+geometry_msgs/Point[] locations
